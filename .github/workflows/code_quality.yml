@@ -11,7 +11,7 @@ jobs:
     name: Lint check
     runs-on: ubuntu-latest #Run on Ubuntu server.
     steps:
-      - uses: actions/checout@v4 #Checkout current repo.
+      - uses: actions/checkout@v4 #Checkout current repo.
       - name: Set up Node.js
         uses: actions/setup.node@v4
         with:
