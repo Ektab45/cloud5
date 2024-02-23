@@ -2,16 +2,16 @@ name: Code_Quality
 run-name: (Run by ${{ github.actor }})
 
 on:
- pull_request:
-   branches:
-    - main #Run on PR against main branch.
+  pull_request:
+    branches:
+      - main # Run on PR against main branch.    
 
 jobs:
-  linter: 
+  linter:
     name: Lint check
-    runs-on: ubuntu-latest #Run on Ubuntu server.
+    runs-on: ubuntu-latest # Run on Ubuntu server.
     steps:
-      - uses: actions/checkout@v4 #Checkout current repo.
+      - uses: actions/checkout@v4 # Checkout current repo.
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -23,9 +23,9 @@ jobs:
 
   unit_tests:
     name: Run unit test
-    runs-on: ubuntu-latest #Run on ubuntu server
+    runs-on: ubuntu-latest # Run on Ubuntu server.
     steps:
-      - uses: actions/checkout@v4 #Checkout current repo.
+      - uses: actions/checkout@v4 # Checkout current repo.
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,5 +34,3 @@ jobs:
         run: npm ci
       - name: Run unit tests
         run: node src/tests/MyUnitTest.js
-
-       
